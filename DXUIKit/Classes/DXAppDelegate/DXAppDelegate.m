@@ -7,6 +7,7 @@
 //
 
 #import "DXAppDelegate.h"
+#import "DXUIKitDefines.h"
 
 @implementation DXAppDelegate
 
