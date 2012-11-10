@@ -8,6 +8,6 @@
 
 @interface DXAppDelegate : UIResponder <UIApplicationDelegate>
 
-- (NSString*)tokenByReplacingAngleBracketsFromDeviceToken:(NSString *)deviceToken;
+- (NSString*)tokenByReplacingAngleBracketsFromDeviceTokenData:(NSData *)deviceToken;
 
 @end
