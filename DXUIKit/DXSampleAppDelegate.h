@@ -10,7 +10,7 @@
 
 @class DXMainTableViewController;
 
-@interface DXAppDelegate : UIResponder <UIApplicationDelegate>
+@interface DXSampleAppDelegate : DXAppDelegate
 
 @property (strong, nonatomic) UIWindow *window;
 

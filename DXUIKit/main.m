@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DXAppDelegate.h"
+#import "DXSampleAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([DXAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([DXSampleAppDelegate class]));
     }
 }

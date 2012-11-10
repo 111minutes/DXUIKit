@@ -12,7 +12,7 @@
 		BC6A0E49161A2130001EB5F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6A0E48161A2130001EB5F0 /* CoreGraphics.framework */; };
 		BC6A0E4F161A2130001EB5F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC6A0E4D161A2130001EB5F0 /* InfoPlist.strings */; };
 		BC6A0E51161A2130001EB5F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E50161A2130001EB5F0 /* main.m */; };
-		BC6A0E55161A2130001EB5F0 /* DXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E54161A2130001EB5F0 /* DXAppDelegate.m */; };
+		BC6A0E55161A2130001EB5F0 /* DXSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E54161A2130001EB5F0 /* DXSampleAppDelegate.m */; };
 		BC6A0E57161A2130001EB5F0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6A0E56161A2130001EB5F0 /* Default.png */; };
 		BC6A0E59161A2130001EB5F0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6A0E58161A2130001EB5F0 /* Default@2x.png */; };
 		BC6A0E5B161A2130001EB5F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6A0E5A161A2130001EB5F0 /* Default-568h@2x.png */; };
@@ -23,6 +23,8 @@
 		BC6A0E89161A21BC001EB5F0 /* UIControl+BlockActions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E79161A21BC001EB5F0 /* UIControl+BlockActions.m */; };
 		BC6A0E8A161A21BC001EB5F0 /* UIGestureRecognizer+BlockActions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E7C161A21BC001EB5F0 /* UIGestureRecognizer+BlockActions.m */; };
 		BC6A0E8B161A21BC001EB5F0 /* DXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A0E81161A21BC001EB5F0 /* DXSwitch.m */; };
+		BC726852164E858E00E0B27C /* DXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC726851164E858E00E0B27C /* DXAppDelegate.m */; };
+		BC72685E164E87B200E0B27C /* DXUIKitDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72685D164E87B200E0B27C /* DXUIKitDefines.m */; };
 		BC7D2691161A22F50024EB28 /* DXMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D268F161A22F50024EB28 /* DXMainTableViewController.m */; };
 		BC7D2692161A22F50024EB28 /* DXMainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7D2690161A22F50024EB28 /* DXMainTableViewController.xib */; };
 		BC7D269C161A2EBB0024EB28 /* DXDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D269B161A2EBB0024EB28 /* DXDetailedViewController.m */; };
@@ -40,8 +42,8 @@
 		BC6A0E4E161A2130001EB5F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC6A0E50161A2130001EB5F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC6A0E52161A2130001EB5F0 /* DXUIKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DXUIKit-Prefix.pch"; sourceTree = "<group>"; };
-		BC6A0E53161A2130001EB5F0 /* DXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXAppDelegate.h; sourceTree = "<group>"; };
-		BC6A0E54161A2130001EB5F0 /* DXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXAppDelegate.m; sourceTree = "<group>"; };
+		BC6A0E53161A2130001EB5F0 /* DXSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXSampleAppDelegate.h; sourceTree = "<group>"; };
+		BC6A0E54161A2130001EB5F0 /* DXSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXSampleAppDelegate.m; sourceTree = "<group>"; };
 		BC6A0E56161A2130001EB5F0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BC6A0E58161A2130001EB5F0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BC6A0E5A161A2130001EB5F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		BC6A0E80161A21BC001EB5F0 /* DXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXSwitch.h; sourceTree = "<group>"; };
 		BC6A0E81161A21BC001EB5F0 /* DXSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXSwitch.m; sourceTree = "<group>"; };
 		BC6A0E84161A21BC001EB5F0 /* DXUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXUIKit.h; sourceTree = "<group>"; };
+		BC726850164E858E00E0B27C /* DXAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAppDelegate.h; sourceTree = "<group>"; };
+		BC726851164E858E00E0B27C /* DXAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAppDelegate.m; sourceTree = "<group>"; };
+		BC72685C164E87B200E0B27C /* DXUIKitDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXUIKitDefines.h; sourceTree = "<group>"; };
+		BC72685D164E87B200E0B27C /* DXUIKitDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXUIKitDefines.m; sourceTree = "<group>"; };
 		BC7D268E161A22F50024EB28 /* DXMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXMainTableViewController.h; sourceTree = "<group>"; };
 		BC7D268F161A22F50024EB28 /* DXMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXMainTableViewController.m; sourceTree = "<group>"; };
 		BC7D2690161A22F50024EB28 /* DXMainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXMainTableViewController.xib; sourceTree = "<group>"; };
@@ -122,8 +128,8 @@
 			children = (
 				BC7D2683161A223C0024EB28 /* Controllers */,
 				BC6A0E67161A21BC001EB5F0 /* Classes */,
-				BC6A0E53161A2130001EB5F0 /* DXAppDelegate.h */,
-				BC6A0E54161A2130001EB5F0 /* DXAppDelegate.m */,
+				BC6A0E53161A2130001EB5F0 /* DXSampleAppDelegate.h */,
+				BC6A0E54161A2130001EB5F0 /* DXSampleAppDelegate.m */,
 				BC6A0E4B161A2130001EB5F0 /* Supporting Files */,
 			);
 			path = DXUIKit;
@@ -146,6 +152,8 @@
 		BC6A0E67161A21BC001EB5F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC72685A164E874A00E0B27C /* DXUIKitDefines */,
+				BC72684F164E857D00E0B27C /* DXAppDelegate */,
 				BC6A0E69161A21BC001EB5F0 /* DXBlockActions */,
 				BC6A0E7D161A21BC001EB5F0 /* DXControls */,
 				BC6A0E82161A21BC001EB5F0 /* DXUIKit */,
@@ -245,6 +253,24 @@
 				BC6A0E84161A21BC001EB5F0 /* DXUIKit.h */,
 			);
 			path = DXUIKit;
+			sourceTree = "<group>";
+		};
+		BC72684F164E857D00E0B27C /* DXAppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BC726850164E858E00E0B27C /* DXAppDelegate.h */,
+				BC726851164E858E00E0B27C /* DXAppDelegate.m */,
+			);
+			path = DXAppDelegate;
+			sourceTree = "<group>";
+		};
+		BC72685A164E874A00E0B27C /* DXUIKitDefines */ = {
+			isa = PBXGroup;
+			children = (
+				BC72685C164E87B200E0B27C /* DXUIKitDefines.h */,
+				BC72685D164E87B200E0B27C /* DXUIKitDefines.m */,
+			);
+			path = DXUIKitDefines;
 			sourceTree = "<group>";
 		};
 		BC7D2683161A223C0024EB28 /* Controllers */ = {
@@ -372,7 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6A0E51161A2130001EB5F0 /* main.m in Sources */,
-				BC6A0E55161A2130001EB5F0 /* DXAppDelegate.m in Sources */,
+				BC6A0E55161A2130001EB5F0 /* DXSampleAppDelegate.m in Sources */,
 				BC6A0E85161A21BC001EB5F0 /* DXActionButtonItem.m in Sources */,
 				BC6A0E86161A21BC001EB5F0 /* DXBlockActionHandler.m in Sources */,
 				BC6A0E87161A21BC001EB5F0 /* UIActionSheet+BlockActions.m in Sources */,
@@ -383,6 +409,8 @@
 				BC7D2691161A22F50024EB28 /* DXMainTableViewController.m in Sources */,
 				BC7D269C161A2EBB0024EB28 /* DXDetailedViewController.m in Sources */,
 				BC8F6268161B787D00A1F361 /* DXBlockActionsDetailedViewController.m in Sources */,
+				BC726852164E858E00E0B27C /* DXAppDelegate.m in Sources */,
+				BC72685E164E87B200E0B27C /* DXUIKitDefines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

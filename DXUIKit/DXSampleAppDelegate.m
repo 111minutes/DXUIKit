@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 111minutes. All rights reserved.
 //
 
-#import "DXAppDelegate.h"
+#import "DXSampleAppDelegate.h"
 
 #import "DXMainTableViewController.h"
 
-@implementation DXAppDelegate
+@implementation DXSampleAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

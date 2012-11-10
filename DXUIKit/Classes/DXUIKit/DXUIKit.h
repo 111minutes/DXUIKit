@@ -6,5 +6,7 @@
 //  Copyright (c) 2012 Max Mashkov. All rights reserved.
 //
 
+#import "DXUIKitDefines.h"
 #import "DXBlockActions.h"
 #import "DXControls.h"
+#import "DXAppDelegate.h"
