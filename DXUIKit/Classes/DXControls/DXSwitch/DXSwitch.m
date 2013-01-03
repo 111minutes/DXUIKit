@@ -70,11 +70,6 @@
     _mooved = NO;
 }
 
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self setOn:_on animated:NO];
-}
-
 - (void)setOn:(BOOL)on animated:(BOOL)animated {
     if (animated) {
         [UIView animateWithDuration:ANIMATION_DURATION animations:^{
