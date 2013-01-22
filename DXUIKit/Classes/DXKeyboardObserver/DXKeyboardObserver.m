@@ -11,14 +11,15 @@
 
 @interface DXKeyboardObserver ()
 
-- (void)keyboardWillAppear:(NSDictionary *)userInfo;
-- (void)keyboardDidAppear:(NSDictionary *)userInfo;
-- (void)keyboardWillDisappear:(NSDictionary *)userInfo;
-- (void)keyboardDidDisappear:(NSDictionary *)userInfo;
+- (void)keyboardWillAppear:(NSNotification *)notification;
+- (void)keyboardDidAppear:(NSNotification *)notification;
+- (void)keyboardWillDisappear:(NSNotification *)notification;
+- (void)keyboardDidDisappear:(NSNotification *)notification;
 
 - (void)tapAction:(id)sender;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic) BOOL shouldScrollToVisibleRect;
 
 @end
 
@@ -53,6 +54,8 @@
                                  object:nil];
         
         self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        self.visibleRectOnKeyboardAppearence = CGRectZero;
+        self.shouldScrollToVisibleRect = NO;
     }
     return self;
 }
@@ -60,57 +63,63 @@
 #pragma mark - 
 #pragma mark - Observing methods
 
-- (void)keyboardWillAppear:(NSDictionary *)userInfo
+- (void)keyboardWillAppear:(NSNotification *)notification
 {
-    DXKeyboardUserInfo *info = [[DXKeyboardUserInfo alloc] initWithUserInfo:userInfo];
-    
-    if (self.scrollView) {
-        [UIView animateWithDuration:info.animationDuration animations:^{
-            self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, info.height, 0);
-        }];
-    }
+    DXKeyboardUserInfo *userInfo = [[DXKeyboardUserInfo alloc] initWithUserInfo:notification.userInfo];
     
     if (self.viewToHideByTap) {
         [self.viewToHideByTap addGestureRecognizer:self.tapRecognizer];
     }
     
     if ([self.observerDelegate respondsToSelector:@selector(keyboardWillAppear:)]) {
-        [self.observerDelegate keyboardWillAppear:info];
+        [self.observerDelegate keyboardWillAppear:userInfo];
     }
 }
 
-- (void)keyboardDidAppear:(NSDictionary *)userInfo
+- (void)keyboardDidAppear:(NSNotification *)notification
 {
-    DXKeyboardUserInfo *info = [[DXKeyboardUserInfo alloc] initWithUserInfo:userInfo];
-    
-    if ([self.observerDelegate respondsToSelector:@selector(keyboardDidAppear:)]) {
-        [self.observerDelegate keyboardDidAppear:info];
-    }
-}
-
-- (void)keyboardWillDisappear:(NSDictionary *)userInfo
-{
-    DXKeyboardUserInfo *info = [[DXKeyboardUserInfo alloc] initWithUserInfo:userInfo];
+    DXKeyboardUserInfo *userInfo = [[DXKeyboardUserInfo alloc] initWithUserInfo:notification.userInfo];
     
     if (self.scrollView) {
-        [UIView animateWithDuration:info.animationDuration animations:^{
-            self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        __weak DXKeyboardObserver *observer = self;
+        [UIView animateWithDuration:userInfo.animationDuration animations:^{
+            observer.scrollView.contentInset = UIEdgeInsetsMake(0, 0, userInfo.height, 0);
+        } completion:^(BOOL finished) {
+            if (observer.shouldScrollToVisibleRect) {
+                [observer.scrollView scrollRectToVisible:observer.visibleRectOnKeyboardAppearence animated:YES];
+            }
+        }];
+    }
+    
+    if ([self.observerDelegate respondsToSelector:@selector(keyboardDidAppear:)]) {
+        [self.observerDelegate keyboardDidAppear:userInfo];
+    }
+}
+
+- (void)keyboardWillDisappear:(NSNotification *)notification
+{
+    DXKeyboardUserInfo *userInfo = [[DXKeyboardUserInfo alloc] initWithUserInfo:notification.userInfo];
+    
+    if (self.scrollView) {
+        __weak DXKeyboardObserver *observer = self;
+        [UIView animateWithDuration:userInfo.animationDuration animations:^{
+            observer.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
         }];
     }
     
     [self removeGestureRecognizer];
     
     if ([self.observerDelegate respondsToSelector:@selector(keyboardWillDisappear:)]) {
-        [self.observerDelegate keyboardWillDisappear:info];
+        [self.observerDelegate keyboardWillDisappear:userInfo];
     }
 }
 
-- (void)keyboardDidDisappear:(NSDictionary *)userInfo
+- (void)keyboardDidDisappear:(NSNotification *)notification
 {
-    DXKeyboardUserInfo *info = [[DXKeyboardUserInfo alloc] initWithUserInfo:userInfo];
+    DXKeyboardUserInfo *userInfo = [[DXKeyboardUserInfo alloc] initWithUserInfo:notification.userInfo];
     
     if ([self.observerDelegate respondsToSelector:@selector(keyboardDidDisappear:)]) {
-        [self.observerDelegate keyboardDidDisappear:info];
+        [self.observerDelegate keyboardDidDisappear:userInfo];
     }
 }
 
@@ -129,6 +138,14 @@
     if (view) {
         [view removeGestureRecognizer:self.tapRecognizer];
     }
+}
+
+#pragma mark -
+#pragma mark - setters
+
+- (void)setVisibleRectOnKeyboardAppearence:(CGRect)visibleRectOnKeyboardAppearence {
+    _visibleRectOnKeyboardAppearence = visibleRectOnKeyboardAppearence;
+    self.shouldScrollToVisibleRect = YES;
 }
 
 @end

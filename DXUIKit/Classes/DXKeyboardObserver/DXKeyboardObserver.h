@@ -22,6 +22,7 @@
 @interface DXKeyboardObserver : NSObject
 
 @property (nonatomic, assign) UIScrollView *scrollView;
+@property (nonatomic) CGRect visibleRectOnKeyboardAppearence;
 @property (nonatomic, assign) UIView *viewToHideByTap;
 
 @property (nonatomic, assign) id<DXKeyboardObserverDelegate> observerDelegate;

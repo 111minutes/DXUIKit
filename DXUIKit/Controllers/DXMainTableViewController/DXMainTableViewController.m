@@ -8,6 +8,7 @@
 
 #import "DXMainTableViewController.h"
 #import "DetailedViewControllers.h"
+#import "DXFormViewController.h"
 
 @interface DXMainTableViewController ()
 
@@ -24,6 +25,7 @@
         self.controllersDictionary = [NSMutableDictionary dictionary];
         [_controllersDictionary setObject:[DXBlockActionsDetailedViewController new]
                                    forKey:@"Block actions"];
+        [_controllersDictionary setObject:[DXFormViewController new] forKey:@"Form with scroll"];
     }
     return self;
 }
