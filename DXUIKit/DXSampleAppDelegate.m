@@ -11,6 +11,7 @@
 #import "DXMainTableViewController.h"
 
 @implementation DXSampleAppDelegate
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

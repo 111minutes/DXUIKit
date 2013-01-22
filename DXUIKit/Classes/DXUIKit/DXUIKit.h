@@ -10,3 +10,5 @@
 #import "DXBlockActions.h"
 #import "DXControls.h"
 #import "DXAppDelegate.h"
+#import "DXKeyboardObserver.h"
+#import "DXKeyboardUserInfo.h"

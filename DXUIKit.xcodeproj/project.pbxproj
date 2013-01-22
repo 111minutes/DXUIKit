@@ -31,6 +31,10 @@
 		BC8F6268161B787D00A1F361 /* DXBlockActionsDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6266161B787D00A1F361 /* DXBlockActionsDetailedViewController.m */; };
 		BC8F6269161B787D00A1F361 /* DXBlockActionsDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8F6267161B787D00A1F361 /* DXBlockActionsDetailedViewController.xib */; };
 		BC8F626B161B795E00A1F361 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8F626A161B795E00A1F361 /* QuartzCore.framework */; };
+		E7C5BBC116AEFB25003E52EA /* DXKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5BBC016AEFB25003E52EA /* DXKeyboardObserver.m */; };
+		E7C5BBC416AF0106003E52EA /* DXKeyboardUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5BBC316AF0105003E52EA /* DXKeyboardUserInfo.m */; };
+		E7C5BBC916AF0C5C003E52EA /* DXFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5BBC716AF0C5C003E52EA /* DXFormViewController.m */; };
+		E7C5BBCA16AF0C5C003E52EA /* DXFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C5BBC816AF0C5C003E52EA /* DXFormViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,13 @@
 		BC8F6266161B787D00A1F361 /* DXBlockActionsDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBlockActionsDetailedViewController.m; sourceTree = "<group>"; };
 		BC8F6267161B787D00A1F361 /* DXBlockActionsDetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXBlockActionsDetailedViewController.xib; sourceTree = "<group>"; };
 		BC8F626A161B795E00A1F361 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E7C5BBBF16AEFB25003E52EA /* DXKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXKeyboardObserver.h; sourceTree = "<group>"; };
+		E7C5BBC016AEFB25003E52EA /* DXKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXKeyboardObserver.m; sourceTree = "<group>"; };
+		E7C5BBC216AF0105003E52EA /* DXKeyboardUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXKeyboardUserInfo.h; sourceTree = "<group>"; };
+		E7C5BBC316AF0105003E52EA /* DXKeyboardUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXKeyboardUserInfo.m; sourceTree = "<group>"; };
+		E7C5BBC616AF0C5C003E52EA /* DXFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXFormViewController.h; sourceTree = "<group>"; };
+		E7C5BBC716AF0C5C003E52EA /* DXFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXFormViewController.m; sourceTree = "<group>"; };
+		E7C5BBC816AF0C5C003E52EA /* DXFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXFormViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +163,7 @@
 		BC6A0E67161A21BC001EB5F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E7C5BBBD16AEFAFB003E52EA /* DXKeyboardObserver */,
 				BC72685A164E874A00E0B27C /* DXUIKitDefines */,
 				BC72684F164E857D00E0B27C /* DXAppDelegate */,
 				BC6A0E69161A21BC001EB5F0 /* DXBlockActions */,
@@ -295,6 +307,7 @@
 		BC7D2697161A2EBB0024EB28 /* DetailedViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7C5BBC516AF0C2E003E52EA /* DXFormViewController */,
 				BC8F6264161B786800A1F361 /* DXBlockActionsDetailedViewController */,
 				BC7D2698161A2EBB0024EB28 /* Base */,
 			);
@@ -327,6 +340,27 @@
 				BC8F6267161B787D00A1F361 /* DXBlockActionsDetailedViewController.xib */,
 			);
 			path = DXBlockActionsDetailedViewController;
+			sourceTree = "<group>";
+		};
+		E7C5BBBD16AEFAFB003E52EA /* DXKeyboardObserver */ = {
+			isa = PBXGroup;
+			children = (
+				E7C5BBBF16AEFB25003E52EA /* DXKeyboardObserver.h */,
+				E7C5BBC016AEFB25003E52EA /* DXKeyboardObserver.m */,
+				E7C5BBC216AF0105003E52EA /* DXKeyboardUserInfo.h */,
+				E7C5BBC316AF0105003E52EA /* DXKeyboardUserInfo.m */,
+			);
+			path = DXKeyboardObserver;
+			sourceTree = "<group>";
+		};
+		E7C5BBC516AF0C2E003E52EA /* DXFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7C5BBC616AF0C5C003E52EA /* DXFormViewController.h */,
+				E7C5BBC716AF0C5C003E52EA /* DXFormViewController.m */,
+				E7C5BBC816AF0C5C003E52EA /* DXFormViewController.xib */,
+			);
+			path = DXFormViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +421,7 @@
 				BC6A0E5B161A2130001EB5F0 /* Default-568h@2x.png in Resources */,
 				BC7D2692161A22F50024EB28 /* DXMainTableViewController.xib in Resources */,
 				BC8F6269161B787D00A1F361 /* DXBlockActionsDetailedViewController.xib in Resources */,
+				E7C5BBCA16AF0C5C003E52EA /* DXFormViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +446,9 @@
 				BC8F6268161B787D00A1F361 /* DXBlockActionsDetailedViewController.m in Sources */,
 				BC726852164E858E00E0B27C /* DXAppDelegate.m in Sources */,
 				BC72685E164E87B200E0B27C /* DXUIKitDefines.m in Sources */,
+				E7C5BBC116AEFB25003E52EA /* DXKeyboardObserver.m in Sources */,
+				E7C5BBC416AF0106003E52EA /* DXKeyboardUserInfo.m in Sources */,
+				E7C5BBC916AF0C5C003E52EA /* DXFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
