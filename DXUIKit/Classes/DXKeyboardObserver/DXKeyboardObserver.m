@@ -9,6 +9,15 @@
 #import "DXKeyboardObserver.h"
 #import "DXKeyboardUserInfo.h"
 
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
+
+#define iPadLandscapeKeyboardHeight 352
+#define iPadPortraitKeyboardHeight 264
+#define iPhoneLandscapeKeyBoardHeight 162
+#define iPhonePortraitKeyBoardHeight 216
+
+
 @interface DXKeyboardObserver ()
 
 - (void)keyboardWillAppear:(NSNotification *)notification;
@@ -83,7 +92,8 @@
     if (self.scrollView) {
         __weak DXKeyboardObserver *observer = self;
         [UIView animateWithDuration:userInfo.animationDuration animations:^{
-            observer.scrollView.contentInset = UIEdgeInsetsMake(0, 0, userInfo.height, 0);
+            
+            observer.scrollView.contentInset = UIEdgeInsetsMake(0, 0, [self keyboardHeight], 0);
         } completion:^(BOOL finished) {
             if (observer.shouldScrollToVisibleRect) {
                 [observer.scrollView scrollRectToVisible:observer.visibleRectOnKeyboardAppearence animated:YES];
@@ -94,6 +104,30 @@
     if ([self.observerDelegate respondsToSelector:@selector(keyboardDidAppear:)]) {
         [self.observerDelegate keyboardDidAppear:userInfo];
     }
+}
+
+- (CGFloat)keyboardHeight
+{
+    CGFloat height = 0.0;
+    UIDeviceOrientation deviseOrientation = [[UIDevice currentDevice] orientation];
+    
+    if ( IDIOM == IPAD ) {
+        if ((deviseOrientation == UIDeviceOrientationLandscapeLeft) ||
+            (deviseOrientation == UIDeviceOrientationLandscapeRight)) {
+            height = iPadLandscapeKeyboardHeight;
+        } else {
+            height = iPadPortraitKeyboardHeight;
+        }        
+    } else {
+        
+        if ((deviseOrientation == UIDeviceOrientationLandscapeLeft) ||
+            (deviseOrientation == UIDeviceOrientationLandscapeRight)) {
+            height = iPhoneLandscapeKeyBoardHeight;
+        } else {
+            height = iPhonePortraitKeyBoardHeight;
+        }
+    }
+    return height;
 }
 
 - (void)keyboardWillDisappear:(NSNotification *)notification
