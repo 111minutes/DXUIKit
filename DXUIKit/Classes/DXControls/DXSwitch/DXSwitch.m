@@ -179,6 +179,9 @@
         
         self.frame = frame;
         
+        self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+        self.layer.shouldRasterize = YES;
+        
         [self addTapRecognizer];
     }
     return self;
@@ -215,6 +218,9 @@
         
         [self addSubview:_lever];
         self.frame = CGRectMake(0, 0, _maskImage.size.width, _maskImage.size.height);
+        
+        self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+        self.layer.shouldRasterize = YES;
         
         [self addTapRecognizer];
     }
