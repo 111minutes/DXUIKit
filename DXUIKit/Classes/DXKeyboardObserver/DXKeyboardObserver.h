@@ -26,5 +26,6 @@
 @property (nonatomic, weak) UIView *viewToHideByTap;
 
 @property (nonatomic, weak) id<DXKeyboardObserverDelegate> observerDelegate;
+@property (nonatomic, readonly) UITapGestureRecognizer *tapRecognizer;
 
 @end
