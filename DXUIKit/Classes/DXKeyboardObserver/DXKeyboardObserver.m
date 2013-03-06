@@ -63,6 +63,7 @@
                                  object:nil];
         
         self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        self.tapRecognizer.cancelsTouchesInView = NO;
         self.visibleRectOnKeyboardAppearence = CGRectZero;
         self.shouldScrollToVisibleRect = NO;
     }
