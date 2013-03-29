@@ -20,7 +20,6 @@
 {
     self = [super init];
     if (self) {
-       
         NSValue *startFrameValue = [userInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
         self.startFrame = startFrameValue.CGRectValue;
         
