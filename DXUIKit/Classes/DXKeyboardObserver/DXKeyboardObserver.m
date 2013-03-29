@@ -93,11 +93,12 @@
     if (self.scrollView) {
         __weak DXKeyboardObserver *observer = self;
         [UIView animateWithDuration:userInfo.animationDuration animations:^{
-            
             observer.scrollView.contentInset = UIEdgeInsetsMake(0, 0, [self keyboardHeight], 0);
         } completion:^(BOOL finished) {
             if (observer.shouldScrollToVisibleRect) {
-                [observer.scrollView scrollRectToVisible:observer.visibleRectOnKeyboardAppearence animated:YES];
+                [UIView animateWithDuration:userInfo.animationDuration animations:^{
+                    [observer.scrollView scrollRectToVisible:observer.visibleRectOnKeyboardAppearence animated:NO];
+                }];
             }
         }];
     }
